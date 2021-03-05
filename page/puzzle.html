@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="./jqPuzzle/jquery.js"></script>
+    <script type="text/javascript" src="jqPuzzle/jquery.jqpuzzle.full.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            const imgSrc = prompt('Выбери картику 1 или 2');
+            $('img').attr({src: `./img-${(imgSrc ? imgSrc : '1')}.jpg`})
+
+            $('.jqp-controls > a:first-child').html('1231qweqw123')
+
+
+
+
+            $('img').jqPuzzle({
+                cols: 5,
+                hole: 11,
+                numbers: false,
+                shuffle: true,
+                control: {
+                    toggleNumbers: false,
+                    counter: false,
+                    timer: false
+                },
+                animation: {
+                    shuffleRounds: 1,
+                    slidingSpeed: 100,
+                    shuffleSpeed: 200
+                }
+            }); // apply to all images
+            $( '.img-1' ).click(function() {
+                $('img').attrs({src: './img-5.jpg'})
+            })
+        });
+
+    </script>
+    <link rel="stylesheet" href="jqPuzzle/jquery.jqpuzzle.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;align-items: center;
+        }
+
+        .jqPuzzle {
+            background: #fff;
+            border: none;
+        }
+
+        .jqPuzzle > div:last-child > a {
+            display: none !important;
+        }
+
+        .jqp-controls a {
+            background: #000 !important;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="" alt="Animals crossing" class="jqPuzzle jqp-r3-c5-h5" />
+    </div>
+
+    <script>
+
+    </script>
+</body>
+</html>
